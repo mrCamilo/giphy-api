@@ -1,10 +1,8 @@
 // api key
 var apiKey = "g78LI21YarNhjYhB3RHzhmtgevtDoTbS";
-//syntax for static images and regular gifs
-//var movingImageLink = "fixed_height.url";
 
 // Rappers array
-var rapArray = ["2pac", "Nas", "Madlib", "MF Doom", "Outkast", "Earl Sweatshirt", "Bone Thugs", "Wu-Tang Clan", "Freddie Gibbs", "Tyler, the Creator"];
+var rapArray = ["2pac", "Nas", "Madlib", "MF Doom", "Earl Sweatshirt", "Bone Thugs", "Wu-Tang Clan", "Beastie Boys", "Tyler, the Creator"];
 
 // Function to display hip hop gifs
 function displayRapStuff() {
@@ -17,15 +15,21 @@ function displayRapStuff() {
         url: queryURL,
         method: "GET"
       }).then(function(giphyResponse) {
+        var result = giphyResponse.data;
 
         // Retrieving the URL for the images, using a for loop to get 10 images.
         for (var i = 0; i < 10 ; i++) {
          var imgURL = giphyResponse.data[i].images.fixed_height.url;
-        // var imgURL = "giphyResponse.data[" + [i] + "].images.fixed_height".url;
-           // console.log(imgURL);
+         //var imgURL = "giphyResponse.data[" + [i] + "].images.fixed_height".url;
+        // console.log([i]);
 
         $("#rapDiv").append('<img src =' + imgURL + "/>") //it keeps running through and appending images to my div with the index i
-        }
+        // ratings from giphy are stored in a <p>paragraph</p>
+        var p = $("<p>");
+        var rating = result[i].rating;
+        p.text("Rating: " + rating);
+        $("#rapDiv").append(p);
+    }
 }
 )}
 

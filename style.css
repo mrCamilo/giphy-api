@@ -16,3 +16,7 @@ body {
 img {
   padding: 5px;
 }
+
+p {
+  float: bottom;
+}
