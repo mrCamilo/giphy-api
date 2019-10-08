@@ -12,3 +12,7 @@ input {
 body {
   background-color: gray;
 }
+
+img {
+  padding: 5px;
+}

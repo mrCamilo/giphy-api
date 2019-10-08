@@ -1,5 +1,7 @@
 // api key
 var apiKey = "g78LI21YarNhjYhB3RHzhmtgevtDoTbS";
+//syntax for static images and regular gifs
+var movingImage = "fixed_height.url";
 
 // Rappers array
 var rapArray = ["2pac", "Nas", "Madlib", "MF Doom", "Earl Sweatshirt", "DMX", "Wu-Tang Clan", "Freddie Gibbs", "Tyler, the Creator"];
@@ -26,7 +28,7 @@ function displayRapStuff() {
 )}
 
 function makeButtons() {
-    $("#hipHopButtons").empty(); // empty buttons div so it doesn't repeat
+    $("#hipHopButtons").empty(); // empty buttons div so the page only holds 10 pics at once
 
     for (var i = 0; i < rapArray.length; i++) {
 
