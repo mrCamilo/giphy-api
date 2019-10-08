@@ -6,6 +6,7 @@ var rapArray = ["2pac", "Nas", "Madlib", "MF Doom", "Earl Sweatshirt", "DMX", "W
 
 // Function to display hip hop gifs
 function displayRapStuff() {
+    $("#rapDiv").empty();
     var rapper = $(this).attr("rap-name");
     var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + rapper;
 
