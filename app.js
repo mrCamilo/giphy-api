@@ -2,12 +2,12 @@
 var apiKey = "g78LI21YarNhjYhB3RHzhmtgevtDoTbS";
 
 // Rappers array
-var rapArray = ["2pac", "Nas", "Madlib", "MF Doom", "Earl Sweatshirt", "DMX", "Wu-Tang Clan", "Kool G Rap"];
+var rapArray = ["2pac", "Nas", "Madlib", "MF Doom", "Earl Sweatshirt", "DMX", "Wu-Tang Clan", "Freddie Gibbs", "Tyler, the Creator"];
 
 // Function to display hip hop gifs
 function displayRapStuff() {
     var rapper = $(this).attr("rap-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + rapper + "&limit=10";
+    var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + rapper;
 
     // Creating an AJAX call for the specific movie button being clicked
     $.ajax({
@@ -15,22 +15,12 @@ function displayRapStuff() {
         method: "GET"
       }).then(function(giphyResponse) {
 
-        // Creating a div to hold the artists
-        var rapperDiv = $("<div class='rap'>");
-
-        // $("body").append('<img src =' + giphyResponse.data[1].images.fixed_height.url + "/>")
-
         // Retrieving the URL for the images, using a for loop to get 10 images.
         for (var i = 0; i < 10 ; i++) {
         var imgURL = giphyResponse.data[i].images.fixed_height.url;
         
-        $("body").append('<img src =' + imgURL + "/>")
+        $("#rapDiv").append('<img src =' + imgURL + "/>") //it keeps running through and appending images with the index i
         }
-        // Creating an element to hold the image
-        //var image = $("<img>").attr("src", imgURL);
-
-        // Append the image
-        //rapperDiv.append(image);
 }
 )}
 
