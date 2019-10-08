@@ -7,7 +7,7 @@ var rapArray = ["Nas", "Wu-Tang Clan", "Ice Cube", "MF Doom", "Earl Sweatshirt",
 // Function to display hip hop gifs
 function displayRapStuff() {
     var rapper = $(this).attr("rapName");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + "rapName";
+    var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + rapper;
 
     // Creating an AJAX call for the specific movie button being clicked
     $.ajax({
@@ -29,7 +29,7 @@ function displayRapStuff() {
         var image = $("<img>").attr("src", imgURL);
 
         // Append the image
-        rapperDiv.append(image);
+        //rapperDiv.append(image);
 }
 )}
 
