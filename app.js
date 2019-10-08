@@ -50,10 +50,10 @@ function makeButtons() {
 }
 
 // This function handles events where a movie button is clicked
-    $("#add-movie").on("click", function(event) {
+    $("#addRapper").on("click", function(event) {
         event.preventDefault();
         // This line grabs the input from the textbox
-        var rapper = $("#rapperinput").val().trim();
+        var rapper = $("#rapperInput").val().trim();
 
         // Adding movie from the textbox to our array
         rapArray.push(rapper);
