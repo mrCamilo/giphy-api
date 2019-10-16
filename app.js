@@ -8,7 +8,7 @@ var rapArray = ["2pac", "Open Mike Eagle", "Nas", "Madlib", "MF Doom", "Earl Swe
 function displayRapStuff() {
     $("#rapDiv").empty();
     var rapper = $(this).attr("rap-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + rapper;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + rapper;
 
     // Creating an AJAX call for the specific button being clicked
     $.ajax({
